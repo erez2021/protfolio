@@ -1,0 +1,26 @@
+<div class="about-container">
+    <div class="typewriter">
+    
+        <h2 class="typing">Hi! I'm Erez and I love developing. Take a look at my latest projects:</h2>
+      </div>
+      <div *ngIf="isShown" class="flex">
+    <div *ngFor="let project of projects; idx as index">
+      <div class="card" (click)="goToUrl(project.url)" >
+    <h3>{{project.title}}</h3>
+    
+    <img [src]="project.img" alt="project-image" class="project-image">
+    <p>{{project.desc}}</p>
+    </div>
+    </div>
+      </div>
+      <div class="show-line"  *ngIf="showLine">
+    <h2>You are welcome to contact me: hershko2013@gmail.com</h2>
+      </div>
+      <div class="math" *ngIf="isShown" (click)="goTo()">
+        <div class="flex-no-space">
+          <h3>Math-Game</h3><p>*desktop only</p>
+        </div>
+          <img src="assets/icons/math.jpg" alt="project-image" class="math-image">
+          <p>Math-game for kids at all ages! Using advanced animations. Was developed with Angular 11</p>
+      </div>
+    </div>
